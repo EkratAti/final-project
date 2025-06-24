@@ -1,0 +1,27 @@
+{
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  },
+  "name": "y",
+  "description": "",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EkratAti/final-project.git"
+  },
+  "keywords": [
+    "Kakolamol86*"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EkratAti/final-project/issues"
+  },
+  "homepage": "https://github.com/EkratAti/final-project#readme"
+}
