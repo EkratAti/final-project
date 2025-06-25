@@ -1,4 +1,5 @@
 import readlineSync from 'readline-sync' ;
+import color from 'colors' ;
 
 // introduce a random Number
 
@@ -16,11 +17,11 @@ function produceNumber () {
 
 function getNumber() {
     while (true) {
-        let userNumber = readlineSync.question (' Enter your 4 unique digits: ')
+        let userNumber = readlineSync.question ('\nEnter your 4 unique digits: '.cyan.dim.bold)
         if (userNumber && userNumber.length ===4 && new Set(userNumber).size === 4 )
             return userNumber;
     }
-    console.log ('Invalid input . Please enter a 4 unique digits: ')
+    
 }
 
 // Compare get to produce Number( count Bulls and Cows)
@@ -42,10 +43,10 @@ function countBullsAndCows(secret , guess) {
 function playGame (){
     const secret = produceNumber() ;
     let attempts = 0 ; 
-    let name = readlineSync.question('what is your name ? ')
+    let name = readlineSync.question('\nwhat is your name ? '.dim.bold.cyan);
     if (!name)
         name = 'Stranger'
-    console.log(`\n welcome ${name}! Let's play Bulls and Cows! ` );
+    console.log(`\n   welcome ${name} ! Let's play Bulls and Cows!`.rainbow.bold) ;
 
     while (true) {
         let guess = getNumber();
@@ -53,12 +54,12 @@ function playGame (){
         let {bulls , cows} = countBullsAndCows(secret , guess) ;
     
         if (bulls === 4){
-            console.log(`Congrats, ${name}! You guessed the secret number ${secret} in ${attempts} attempts!`) ;
+            console.log(`\nCongrats, ${name}! You guessed the secret number ${secret} in ${attempts} attempts!\n`.rainbow.bold) ;
             break ;
         } else if (bulls === 0 && cows === 0) {
-            console.log(`No Bulls and Cows. Try again!`) ;
+            console.log(`\nNo Bulls and Cows. Try again!.red.italic.bold`) ;
         } else {
-            console.log(`Tipp : ${bulls} Bulls and ${cows} Cows. Try again!`) ;
+            console.log(`\nTipp : ${bulls} Bulls and ${cows} Cows. Try again!`.bgBrightYellow.bold.red) ;
         }
     }
    
