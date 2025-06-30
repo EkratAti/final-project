@@ -57,7 +57,7 @@ function playGame (){
             console.log(`\nCongrats, ${name}! You guessed the secret number ${secret} in ${attempts} attempts!\n`.rainbow.bold) ;
             break ;
         } else if (bulls === 0 && cows === 0) {
-            console.log(`\nNo Bulls and Cows. Try again!.red.italic.bold`) ;
+            console.log(`\nNo Bulls and Cows. Try again!`.bgBrightRed.bold.white) ;
         } else {
             console.log(`\nTipp : ${bulls} Bulls and ${cows} Cows. Try again!`.bgBrightYellow.bold.red) ;
         }
